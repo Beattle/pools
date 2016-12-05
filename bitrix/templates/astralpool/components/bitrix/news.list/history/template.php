@@ -14,12 +14,7 @@ $this->setFrameMode(true);
 
 ?>
 
-    <div class="aboutHi">
-        <div class="center">
-            <h3>История компании</h3>
-            <span class="abSep"></span>
-            <div class="abLid">
-            </div>
+
             <div class="sliderWrap histSlider">
                 <div id="slider8">
                     <ul>
@@ -44,7 +39,7 @@ $this->setFrameMode(true);
                             <section>
                                 <?echo $arItem["PREVIEW_TEXT"];?>
                             </section>
-                            <a href="javascript:void();" class="histMore inLine">Подробнее</a>
+                            <a href="javascript:void();" class="histMore">Подробнее</a>
                         <?endif;?>
                     </li>
 
@@ -55,8 +50,7 @@ $this->setFrameMode(true);
             </div>
                 <a href="javascript:void(0)" onclick="indBxSlide8.goToNextSlide();" class="feedNext opac" id="histNext"></a> <a href="javascript:void(0)" onclick="indBxSlide8.goToPrevSlide();" class="feedPrev" id="histPrev"></a>
         </div>
-    </div>
-</div>
+
 
 
 

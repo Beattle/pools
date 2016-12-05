@@ -28,22 +28,45 @@ use Bitrix\Main\Page\Asset;
 
 	<title><?$APPLICATION->ShowTitle()?></title>
 </head>
-<body>
+<body class="<?=$USER->IsAuthorized()? 'authorized':'guest'?>">
 
-<div id="panel"><? $APPLICATION->ShowPanel(); ?>
-</div>
+<?if($USER->IsAuthorized()):?>
+    <div id="panel"> <? $APPLICATION->ShowPanel(); ?></div>
+<?endif;?>
 
-<div class="fixHead">
-    <div class="fixHeadIn">
-        <span class="prof">
-                            <a href="#modalLogin" class="blue inLine" id="mLogTrig">Войти</a> или <a href="#modalRegister" class="inLine" id="mRegTrig">Зарегистрироваться</a>
-                        <span style="display: block;margin-left: 5px;" id="bookID"> | <a href="bookmarks">Закладки</a></span>
-                    </span>
-        <p>Компания Astralpool технологии для бассейнов и велнесс +7 (495) 645-45-51</p>
-    </div>
-</div>
 <header class="bx-header">
-
+    <div class="inner-row">
+        <div class="cell-l cells">
+            <div class="phone">
+                <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => SITE_DIR."include/phone.php",
+                        "EDIT_TEMPLATE" => ""
+                    )
+                );?>
+            </div>
+            <div class="logo">
+                <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => SITE_DIR."include/logo.php",
+                        "EDIT_TEMPLATE" => ""
+                    )
+                );?>
+            </div>
+        </div>
+        <div class="cell-r cells">
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:menu",
+                "horizontal_multilevel",
+                Array(
+                    "ROOT_MENU_TYPE" => "top",
+                    "MAX_LEVEL" => "3",
+                    "CHILD_MENU_TYPE" => "left",
+                    "USE_EXT" => "Y"
+                )
+            );?>
+        </div>
+    </div>
 </header>
 
 <div class="content">

@@ -114,6 +114,11 @@ Array(
 	</div>
 </div>
 
+<div class="aboutHi">
+    <div class="center">
+        <h3>История компании</h3>
+        <span class="abSep"></span>
+        <div class="abLid"></div>
 <?$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"history", 
@@ -125,8 +130,8 @@ Array(
 		"AJAX_MODE" => "Y",
 		"IBLOCK_ID" => "5",
 		"NEWS_COUNT" => "20",
-		"SORT_BY1" => "ACTIVE_FROM",
-		"SORT_ORDER1" => "DESC",
+		"SORT_BY1" => "CREATED",
+		"SORT_ORDER1" => "ASC",
 		"SORT_BY2" => "SORT",
 		"SORT_ORDER2" => "ASC",
 		"FILTER_NAME" => "",
@@ -158,8 +163,8 @@ Array(
 		"CACHE_TIME" => "3600",
 		"CACHE_FILTER" => "Y",
 		"CACHE_GROUPS" => "Y",
-		"DISPLAY_TOP_PAGER" => "Y",
-		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "N",
 		"PAGER_TITLE" => "Новости",
 		"PAGER_SHOW_ALWAYS" => "Y",
 		"PAGER_TEMPLATE" => "",
@@ -182,26 +187,23 @@ Array(
 	),
 	false
 );?>
+    </div>
+</div>
 
 <div class="aboutJo">
 	<div class="center">
 		<h3>Стань частью команды Astralpool</h3>
  <span class="abSep"></span>
-		<div class="abLid">
-		</div>
- <section>
-		<dl>
-		</dl>
-		<div class="jForm">
-			<form method="post" enctype="multipart/form-data">
- <label>Имя и фамилия</label> <input name="name" required="" type="text"><br>
- <label>Эл. почта</label> <input name="jemail" required="" placeholder="E-mail" type="text"><br>
- <label>Телефон</label> <input style="width: 200px;" name="phone" placeholder="(495) 123-456-78" type="text"><br>
-				 <!--                        <input type="file" name="resume_f" /> <span>Вы можете прикрепить файл не более 90 Mb</span><br/>--> <input class="bBtn" value="Отправить резюме" type="submit"> <input name="resume" value="1" type="hidden">
-			</form>
-		</div>
- <br clear="all">
- </section>
+		<div class="abLid"></div>
+<?$APPLICATION->IncludeComponent("bitrix:main.feedback","histJob",Array(
+        "USE_CAPTCHA" => "Y",
+        "OK_TEXT" => "Спасибо, ваше сообщение принято.",
+        "EMAIL_TO" => "beattle-b@yandex.ru",
+        "REQUIRED_FIELDS" => Array("NAME","EMAIL"),
+        "EVENT_MESSAGE_ID" => Array("7"),
+    )
+);?>
+
 	</div>
 </div>
  <br><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>

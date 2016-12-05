@@ -1,4 +1,4 @@
-var indexSlide=indexSlide2=indexSlide3=indexSlide4=indexSlide5=indBxSlide8=slider7=indBxSlide10=false
+var indexSlide=indexSlide2=indexSlide3=indexSlide4=indexSlide5=indBxSlide8=slider7=indBxSlide10=false;
 var activeProjSlide=0;
 jQuery(document).ready(function($){
 
@@ -12,6 +12,29 @@ jQuery(document).ready(function($){
     if($('.prosGalSm').length) actProdGal();
 
     $(".fancybox").fancybox();
+
+    var histLink = $('.histMore');
+
+    histLink.each(function () {
+        var fullHistory = $(this).parent().find('section').clone();
+        var title =$(this).parent().find('var').text();
+        fullHistory.addClass('modal');
+        fullHistory.wrapInner('<div class="modalForm histModalTxt"></div>');
+        fullHistory.prepend('<strong>История компании: '+title+'</strong>');
+       $(this).fancybox({
+           padding: 0,
+           fitToView    : false,
+           autoSize    : true,
+           closeClick    : false,
+           content:fullHistory,
+           maxWidth:770
+       });
+    });
+
+    $.fancybox.open($('#modal_msg'));
+
+
+
 
     $(".inLine").fancybox({
         padding: 0,
@@ -610,8 +633,7 @@ function allSliders(){
                 }else{
                     $('#histPrev').addClass('opac')
                 }
-                //console.log(indBxSlide8.getCurrentSlide())
-                //console.log(newIndex)
+
             }
         });
     }
