@@ -1,5 +1,6 @@
 var indexSlide=indexSlide2=indexSlide3=indexSlide4=indexSlide5=indBxSlide8=slider7=indBxSlide10=false;
 var activeProjSlide=0;
+
 jQuery(document).ready(function($){
 
     $(window).bind('contextmenu', function(e) {
@@ -587,17 +588,7 @@ function allSliders(){
         });
     }
 
-    if($('#slider6').length) {
-        indBxSlide6 = $('#slider6').bxSlider({
-            pager:true,
-            slideSelector: 'div',
-            adaptiveHeight: false,
-            startSlide: 0,
-            controls: false,
-            pause: 6000,
-            auto: true
-        });
-    }
+
 
     if($('#slider7').length) {
         indBxSlide7 = $('#slider7').bxSlider({

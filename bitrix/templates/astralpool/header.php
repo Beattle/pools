@@ -34,6 +34,7 @@ use Bitrix\Main\Page\Asset;
     <div id="panel"> <? $APPLICATION->ShowPanel(); ?></div>
 <?endif;?>
 
+<div id="wrap-container">
 <header class="bx-header">
     <div class="inner-row">
         <div class="cell-l cells">
@@ -57,7 +58,7 @@ use Bitrix\Main\Page\Asset;
         <div class="cell-r cells">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:menu",
-                "horizontal_multilevel",
+                "topMenu",
                 Array(
                     "ROOT_MENU_TYPE" => "top",
                     "MAX_LEVEL" => "3",
