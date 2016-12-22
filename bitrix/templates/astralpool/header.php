@@ -11,15 +11,17 @@ use Bitrix\Main\Page\Asset;
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
 	<link rel="shortcut icon" type="image/x-icon" href="<?=SITE_DIR?>favicon.ico" />
+    <?Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/normalize.css");?>
 
 	<?$APPLICATION->ShowHead();
 //---------------------------------JS--------------------------------------------------------
-    Asset::getInstance()->addJs("//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js");
+    Asset::getInstance()->addJs("//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js");
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/bx/jquery.bxslider.min.js");
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/fancybox/jquery.fancybox.pack.js");
 
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/main.js");
 //--------------------------------CSS-----------------------------------------------
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/old.css");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/js/bx/jquery.bxslider.css");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/js/fancybox/jquery.fancybox.css");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/colors.css");
@@ -58,7 +60,7 @@ use Bitrix\Main\Page\Asset;
         <div class="cell-r cells">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:menu",
-                "topMenu",
+                "top_menu",
                 Array(
                     "ROOT_MENU_TYPE" => "top",
                     "MAX_LEVEL" => "3",
