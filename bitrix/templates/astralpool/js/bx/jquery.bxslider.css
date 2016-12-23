@@ -96,9 +96,9 @@
 	height: 10px;
 	margin: 0 5px;
 	outline: 0;
-	-moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
 	border-width: 2px;
 	border-color:transparent;
 	border-style: solid;

@@ -17,7 +17,6 @@
 	list-style:none;
 	font-size:11px;
 	float:left;
-	position: relative;
 	height: inherit;
 	/*font-size:90%*/
 }
@@ -52,7 +51,7 @@
 {
 	color:#575757;
 	height: 16px;
-	padding:37px 12px;
+	padding:12px;
 }
 
 /*Root menu selected*/
@@ -60,7 +59,7 @@
 {
 	color:#00abe4;
 	font-weight:bold;
-	padding:37px 12px;
+	padding:12px;
 }
 
 /*Root items: hover*/
@@ -99,13 +98,14 @@
 {
 	position:absolute;
 	/*top:-999em;*/
-	top:auto;
+	top:135px;
 	display:none;
-	z-index:500;
+	z-index:501;
 
-	height:auto;
+	height:110px;
 	/*width:12em;*/
-	width:135px;
+	width:100%;
+	left: 0;
 	background:#F5F5F5;
 	border:1px solid #C1C1C1;
 }
@@ -187,7 +187,7 @@
 {
 	/*z-index:1000;
 	top:auto;*/
-	display:block;
+
 }
 
 div.menu-clear-left

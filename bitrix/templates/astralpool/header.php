@@ -58,6 +58,7 @@ use Bitrix\Main\Page\Asset;
             </div>
         </div>
         <div class="cell-r cells">
+            <div class="menu">
             <?$APPLICATION->IncludeComponent(
                 "bitrix:menu",
                 "top_menu",
@@ -68,9 +69,26 @@ use Bitrix\Main\Page\Asset;
                     "USE_EXT" => "Y"
                 )
             );?>
+            </div>
+            <div class="login">
+                <?$APPLICATION->IncludeComponent("bitrix:main.include","",Array(
+                        "AREA_FILE_SHOW" => "file",
+                        "PATH" => SITE_DIR."include/login.php",
+                        "EDIT_TEMPLATE" => ""
+                    )
+                );?>
+            </div>
+            <div class="search">
+                <?$APPLICATION->IncludeComponent("bitrix:search.form","header_search",Array(
+                        "USE_SUGGEST" => "N",
+                        "PAGE" => "#SITE_DIR#search/index.php"
+                    )
+                );?>
+            </div>
         </div>
+
     </div>
 </header>
-
+<div class="menu-line"></div>
 <div class="content">
 
