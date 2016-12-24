@@ -6,27 +6,25 @@ jQuery(document).ready(function ($) {
 // drop down menu
 
     var
-        sfEls = listMenu.find('li'),
+        sfEls = listMenu.find('li.parent'),
         m_line = $('.menu-line');
 
     sfEls.hover(function (e) {
-        if($(this).hasClass('parent')){
             $(this).addClass('jshover');
             var $this = $(this);
-            m_line.finish().slideToggle('normal',function () {
-                $this.find('ul').fadeIn('300');
+            m_line.finish().show('fast',function () {
+                $this.find('ul').finish().fadeIn('300');
             });
 
-        }
+
     },function (e) {
-        if($(this).hasClass('parent')){
-             $(this).removeClass('jshover');
+
+            $(this).removeClass('jshover');
             var $this = $(this);
-            $this.find('ul').fadeOut('fast',function () {
-                m_line.finish().slideToggle('normal',function () {
-                })
+            m_line.finish().hide();
+            $this.find('ul').finish().fadeOut('fast',function () {
+
             });
-        }
     });
 
 // magic line

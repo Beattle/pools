@@ -1,8 +1,36 @@
 // @blue:#5e93b0;
 @blue:#4ac3ec;
+
 .two_d(@width,@height){
   width: @width;
   height: @height;
+}
+
+.cord(@top:0,@left:0,@bot:0,@right:0){
+  top:@top;
+  left:@left;
+  bottom:@bot;
+  right: @right;
+}
+
+.vision(@vision:none){
+  display: @vision;
+}
+
+.textAlign(@align:center){
+  text-align: @align;
+}
+
+.display{
+  .inline{
+    display: inline;
+  }
+  .inline-block{
+    display: inline-block;
+  }
+  .block{
+    display: block;
+  }
 }
 
 .hide{
@@ -27,6 +55,10 @@ input, button{
   background: none;
 }
 
+p,ul,h1,h2,h3{
+  margin: 0;
+  padding: 0;
+}
 input[type=text]{
   &:focus::-webkit-input-placeholder { color:transparent; }
   &:focus:-moz-placeholder { color:transparent; }
@@ -159,61 +191,189 @@ body{
   z-index: 500;
 }
 
+.slider-container{
+  margin-bottom: 35px;
+}
+
 .tb1{
   background: url("images/tb1.png") no-repeat;
   min-height: 317px;
   position: relative;
+
+  .bx-wrapper{
+    .absolute;
+    .cord;
+    margin: auto;
+    height: 232px+28;
+  }
+
+  #homeCarousel{
+    text-align: center;
+    /*		position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 1140px;*/
+  }
+
+  li{
+    background: #fff;
+    padding: 3px 10px 25px 10px;
+    opacity: 0.70;
+    filter:  alpha(opacity=70);
+    height: 207px+25;
+  }
+
+  li:last-child{
+    margin-right: 0;
+  }
+
+  .link{
+    text-decoration: none;
+  }
+
+  p{
+    position: relative;
+  }
+
+  .img-block{
+    text-align: center;
+  }
+
+  .img-block{
+    img{
+      margin: 0 auto;
+    }
+
+    .hover{
+      .absolute;
+      .cord();
+      margin: 0 auto;
+      .vision(none);
+    }
+  }
+
+
+  .name-block{
+    margin-top: 8px;
+
+    .name{
+      color: #000;
+    }
+  }
+
+  .desc-block{
+    margin-top: 16px;
+    .text{
+      color: #999;
+    }
+  }
+
+
+
 }
 
-#homeCarousel{
-  text-align: center;
-  /*		position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 1140px;*/
-}
-
-.tb1 li{
-  background: #fff;
-  padding: 3px 20px 25px 20px;
-  opacity: 0.70;
-  filter:  alpha(opacity=70);
-}
-
-.tb1 li:last-child{
-  margin-right: 0;
-}
-
-
-.tb1 .link{
-  text-decoration: none;
-}
-
-.tb1 p{
-  position: relative;
-}
 
 
 
-
-
-.tb1 .hover{
-  display: none;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-}
 
 .tb2{
-  background: 4ac3ec;
+  background: @blue;
+  padding-top: 30px;
+  h3{
+    color:white;
+    .textAlign();
+    margin-bottom: 26px;
+  }
+  ul{
+    max-width: 890px;
+    display: block;
+    margin: 0 auto;
+  }
+
+  li{
+    display: inline-block;
+    max-width: 272px;
+    margin-right: 33px;
+    vertical-align: top;
+
+    &:last-child{
+      margin-right: 0;
+    }
+
+    a{
+      text-decoration: none;
+      &:hover{
+        p{
+          color: @blue;
+
+          .date{
+            color: #fff;
+          }
+        }
+      }
+    }
+    .img-intro{
+      margin-bottom: -4px;
+      .relative;
+
+      .date{
+        .bg(@url: 'images/m_d.png');
+        .absolute;
+        .display > .block;
+        .two_d(53px,51px);
+        .cord;
+        color: #fff;
+        text-transform: lowercase;
+        line-height: 1;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing:    border-box;
+        box-sizing:         border-box;
+        padding: 10px;
+      }
+    }
+    .intro-name{
+      color: #000;
+      padding: 10px;
+      min-height: 60px;
+      display: block;
+      .bg(#fff);
+    }
+
+    .inf{
+      > *{
+        vertical-align: middle;
+      }
+      padding-top: 13px;
+      .bg(white);
+      padding-left: 5px;
+      border-top: 2px solid #eaeaea;
+      padding-bottom: 10px;
+      .news_m{
+        .bg(@url: 'images/news_m.png');
+        .two_d(17px,14px);
+        .display > .inline-block;
+      }
+
+      .name{
+        margin-left: 15px;
+      }
+
+      .comms{
+        .bg(@url: 'images/comms.png');
+        .two_d(18px,15px);
+        .display > .inline-block;
+        margin-left: 15px;
+      }
+      .count{
+        margin-left: 10px;
+      }
+    }
+
+
+  }
 }
 
-.tb2 li{
-  display: inline-block;
-  width: 25%;
-}
 
 footer{
   min-height: 180px;

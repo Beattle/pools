@@ -89,6 +89,6 @@ use Bitrix\Main\Page\Asset;
 
     </div>
 </header>
-<div class="menu-line"></div>
+<!--<div class="menu-line"></div>-->
 <div class="content">
 

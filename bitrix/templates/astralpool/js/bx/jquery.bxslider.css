@@ -16,7 +16,7 @@
 
 .bx-wrapper {
 	position: relative;
-	margin: 0 auto 60px;
+	margin: 0 auto;
 	padding: 0;
 	*zoom: 1;
 }
@@ -47,7 +47,7 @@
 
 .bx-wrapper .bx-controls{
 	width: 100%;
-	position: relative;
+	position: absolute;
 	bottom: 33px;
 }
 

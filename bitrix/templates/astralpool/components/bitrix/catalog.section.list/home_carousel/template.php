@@ -6,14 +6,14 @@ foreach ($arResult['SECTIONS'] as $key => $SECTION):?>
     <li class="home-sel">
         <a class="link" href="<?=$SECTION['SECTION_PAGE_URL']?>" title="<?=$SECTION['NAME']?>">
             <div>
-                <p>
+                <p class="img-block">
                     <img class="default" src="<?=$SECTION['RESIZED_PICTURE']['src']?>" />
                     <img class="hover" src="<?=$SECTION['RESIZED_HOVER_PICTURE']['src']?>"
                 </p>
-                <p>
+                <p class="name-block">
                     <span class="name"><?=$SECTION['NAME']?></span>
                 </p>
-                <p>
+                <p class="desc-block">
                     <span class="text"><?=$SECTION['DESCRIPTION']?></span>
                 </p>
             </div>
@@ -36,7 +36,8 @@ foreach ($arResult['SECTIONS'] as $key => $SECTION):?>
             minSlides: 4,
             maxSlides: 4,
             infiniteLoop:false,
-            slideWidth:200
+            slideWidth:200,
+            slideMargin:30
 
         });
     </script>

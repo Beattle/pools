@@ -1,6 +1,6 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");?>
 <?$APPLICATION->SetTitle("Оборудование для бассейна и фонтаны | Астралпул");?>
-
+<div class="slider-container">
 <?$APPLICATION->IncludeComponent(
     "bitrix:highloadblock.list",
     "home_slider",
@@ -9,6 +9,7 @@
         "DETAIL_URL" => ""
     )
 );?>
+</div>
 
 
 <div class="tb1">
@@ -34,11 +35,13 @@
     );?>
 </div>
 <div class="tb2">
+    <h3>Последние новости</h3>
     <?$APPLICATION->IncludeComponent(
         "bitrix:news.list",
         "index_bot_news",
         Array(
             "ACTIVE_DATE_FORMAT" => "d.m.Y",
+            "CREATE_DATE_FORMAT" =>"d.m.Y",
             "ADD_SECTIONS_CHAIN" => "N",
             "AJAX_MODE" => "N",
             "AJAX_OPTION_ADDITIONAL" => "",
@@ -84,9 +87,9 @@
             "SET_STATUS_404" => "N",
             "SET_TITLE" => "N",
             "SHOW_404" => "N",
-            "SORT_BY1" => "ACTIVE_FROM",
+            "SORT_BY1" => "CREATED",
             "SORT_BY2" => "SORT",
-            "SORT_ORDER1" => "DESC",
+            "SORT_ORDER1" => "ASC",
             "SORT_ORDER2" => "ASC"
         )
     );?>
